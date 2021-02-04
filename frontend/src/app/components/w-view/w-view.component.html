@@ -1,0 +1,44 @@
+<section class="empleado">
+  <div class="empleado__empresa">
+    <h1>Numero de empleado: {{empleado?._id}}</h1>
+    <h3>Area: {{empleado?.area}}</h3>
+  </div>
+  <div class="empleado__info">
+    <h2>Información</h2>
+    <div class="empleado__info--area">
+      <table>
+        <tr class="row">
+          <td>Nombre</td>
+          <td>{{empleado?.nombre}}</td>
+        </tr>
+        <tr class="row">
+          <td>Apellido Paterno</td>
+          <td>{{empleado?.apellido_p}}</td>
+        </tr>
+        <tr class="row">
+          <td>Apellido Materno</td>
+          <td>{{empleado?.apellido_m}}</td>
+        </tr>
+        <tr class="row">
+          <td>Fecha de nacimiento</td>
+          <td>{{empleado?.fecha_nac | date: 'dd-MMM-yyyy'}}</td>
+        </tr>
+        <tr class="row">
+          <td>Sexo</td>
+          <td>{{empleado?.sexo}}</td>
+        </tr>
+        <tr class="row">
+          <td>Nacionalidad</td>
+          <td>{{empleado?.nacionalidad}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="empleado__acciones">
+    <h2>Acciones</h2>
+    <div class="empleado__acciones--botones">
+      <button (click)="editarEmpleado(empleado._id)" class="boton">Modificar</button>
+      <button (click)="eliminarEmpleado(empleado._id)" class="boton">Eliminar</button>
+    </div>
+  </div>
+</section>

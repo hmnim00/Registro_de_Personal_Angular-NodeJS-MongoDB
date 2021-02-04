@@ -1,0 +1,22 @@
+<div class="empleados">
+  <div class="empleados__contenido">
+    <table>
+      <tr>
+        <th>Numero de empleado</th>
+        <th>Apellidos</th>
+        <th>Nombre(s)</th>
+        <th>Área ID</th>
+        <th>Acciones</th>
+      </tr>
+      <tr *ngFor="let empleado of empleados">
+        <td>{{ empleado._id }}</td>
+        <td>{{ empleado.apellido_p}} {{ empleado.apellido_m}}</td>
+        <td>{{ empleado.nombre }}</td>
+        <td>{{ empleado.area }}</td>
+        <td>
+          <button (click)="empleadoSeleccionado(empleado._id)" class="accion_btn">Ver detalles</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

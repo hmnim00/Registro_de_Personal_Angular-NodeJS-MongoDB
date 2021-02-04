@@ -1,0 +1,293 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: .5rem;
+  height: 5vh;
+
+  &__title {
+    font-size: 30px;
+    padding-left: 1rem;
+    color: rgb(73, 73, 73);
+  }
+  
+  &__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 25%;
+    list-style-type: none;
+
+    &--link {
+      font-size: 19px;
+      
+      &_item {
+        color: rgb(73, 73, 73);
+
+        &:hover {
+          color: rgb(49, 49, 49);
+        }
+      }
+    }
+  }
+}
+
+.main {
+  margin-top: 4vh;
+  height: 91vh;
+  overflow: hidden;
+}
+
+.empleado {
+  display: grid;
+  grid-template-columns: 300px 3fr 1fr 300px;
+  line-height: 2;
+  
+  &__empresa {
+    grid-column: 2/4;
+    background: #ececec;
+    border-radius: 8px 8px 0 0;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__info {
+    grid-column: 2/3;
+
+    h2 {
+      padding: .5rem 2rem;
+    }
+
+    &--area {
+      padding: .5rem 2rem;
+      display: grid;
+      font-size: 18px;
+
+      table {
+        width: 80%;
+
+        td {
+          padding: 0 1rem;
+          border-bottom: 1px solid #ececec;
+
+          &:nth-child(1) {
+            font-size: 16px;
+            color: rgb(73, 73, 73);
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+
+  &__acciones {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+
+    &--botones {
+      display: flex;
+      flex-direction: column;
+
+      button {
+        background: #ececec;
+        border-radius: 8px;
+        text-align: center;
+        color: rgb(73, 73, 73);
+        padding: .4rem;
+        font-size: 15px;
+        margin: .7rem 0;
+        cursor: pointer;
+        border: none;
+
+        &:hover {
+          color: rgb(49, 49, 49);
+          background: #cfcfcf;
+        }
+      }
+    }
+  }
+}
+
+.agregar {
+  display: grid;
+  grid-template-columns: 300px 3fr 1fr 300px;
+  line-height: 2;
+  
+  &__empleado {
+    grid-column: 2/4;
+    background: #ececec;
+    border-radius: 8px 8px 0 0;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__info {
+    grid-column: 2/3;
+
+    h2 {
+      padding: .5rem 2rem;
+    }
+
+    &--area {
+      padding: .5rem 2rem;
+      display: grid;
+      font-size: 18px;
+
+      table {
+        width: 80%;
+        margin-bottom: 2rem;
+
+        td {
+          padding: 0 1rem;
+          border-bottom: 1px solid #ececec;
+
+          &:nth-child(1) {
+            font-size: 16px;
+            color: rgb(73, 73, 73);
+            width: 40%;
+          }
+        }
+
+        input, select {
+          margin: .4rem 0;
+          border: none;
+          padding: .7rem;
+          width: 100%;
+          background: #f0f0f0;
+          border-radius: 8px;
+
+          &:focus {
+            outline: none;
+            background: rgb(207, 207, 207);
+          }
+        }
+      }
+
+      .boton {
+        background: #ececec;
+        border-radius: 8px;
+        text-align: center;
+        color: rgb(73, 73, 73);
+        padding: .4rem;
+        font-size: 15px;
+        cursor: pointer;
+
+        &:hover {
+          color: rgb(49, 49, 49);
+          background: #cfcfcf;
+        }
+      }
+    }
+  }
+
+  &__acciones {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+
+    &--botones {
+      display: flex;
+      flex-direction: column;
+
+      .boton {
+        background: #ececec;
+        border-radius: 8px;
+        text-align: center;
+        color: rgb(73, 73, 73);
+        padding: .4rem;
+        font-size: 15px;
+        margin: .7rem 0;
+        cursor: pointer;
+
+        &:hover {
+          color: rgb(49, 49, 49);
+          background: #cfcfcf;
+        }
+      }
+    }
+  }
+}
+
+.inicio {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 3rem 0;
+
+  &__contenido {
+    grid-column: 2/3;
+    background: #ececec;
+    padding: 4rem;
+    border-radius: 8px;
+
+    h2 {
+      border-bottom: 1px solid #cfcfcf;
+      padding-bottom: 1rem;
+    }
+
+    &--acerca {
+      padding: 3rem 1rem;
+    }
+
+    &--footer {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+}
+
+.empleados {
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+
+  &__contenido {
+    grid-column: 2/3;
+    
+    table {
+      width: 100%;
+
+      th {
+        padding: .7rem;
+        border-bottom: 1px solid #ececec;
+        text-align: left;
+      }
+
+      td {
+        padding: .5rem;
+        border-bottom: 1px solid #ececec;
+
+        button {
+          background: #ececec;
+          padding: .5rem 1rem;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+
+          &:hover {
+            background: #cfcfcf;
+          }
+        }
+      }
+    }
+  }
+}

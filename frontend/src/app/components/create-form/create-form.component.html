@@ -1,0 +1,75 @@
+<section class="agregar">
+  <div class="agregar__empleado">
+    <h1>Nuevo registro de empleado</h1>
+  </div>
+  <div class="agregar__info">
+    <h2>Información</h2>
+    <div class="agregar__info--area">
+      <form action="">
+        <table>
+          <tr class="row">
+            <td>Nombre</td>
+            <td>
+              <input type="text" class="input" [(ngModel)]="empleado.nombre" name="nombre" placeholder="Nombre" autofocus required>
+            </td>
+          </tr>
+          <tr class="row">
+            <td>Apellido Paterno</td>
+            <td><input type="text" class="input" [(ngModel)]="empleado.apellido_p" name="apellido_p" placeholder="Apellido Paterno" required></td>
+          </tr>
+          <tr class="row">
+            <td>Apellido Materno</td>
+            <td>
+              <input type="text" class="input" [(ngModel)]="empleado.apellido_m" name="apellido_m" placeholder="Apellido Materno" required>
+            </td>
+          </tr>
+          <tr class="row">
+            <td>Fecha de nacimiento</td>
+            <td>
+              <input type="date" class="input" [ngModel]="empleado.fecha_nac | date:'yyyy-MM-dd'" [ngModelOptions]="{timezone: 'UTC'}" (ngModelChange)="empleado.fecha_nac = $event" ng-model-options="{timezone:'UTC'}" name="fecha_nac" required>
+            </td>
+          </tr>
+          <tr class="row">
+            <td>Sexo</td>
+            <td>
+              <select name="sexo" [(ngModel)]="empleado.sexo">
+                <option *ngFor="let sexo of sexos" [value]="sexo.nombre">{{sexo.nombre}}</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="row">
+            <td>Nacionalidad</td>
+            <td>
+              <select name="nacionalidad" [(ngModel)]="empleado.nacionalidad">
+                <option *ngFor="let nacion of nacionalidades" [value]="nacion.nombre">{{nacion.nombre}}</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="row">
+            <td>Estado civil</td>
+            <td>
+              <select name="estado_civil" [(ngModel)]="empleado.estado_civil">
+                <option *ngFor="let estado of estadoCivil" [value]="estado.estado">{{estado.estado}}</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="row">
+            <td>Area asignada</td>
+            <td>
+              <select name="area" [(ngModel)]="empleado.area">
+                <option *ngFor="let areaNombre of areas" [value]="areaNombre.areaId">{{areaNombre.areaId}}</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <button class="boton" (click)="modificar ? actualizarEmpleado() : guardarEmpleado()">Guardar registro</button>
+      </form>
+    </div>
+  </div>
+  <div class="agregar__acciones">
+    <h2>Acciones</h2>
+    <div class="agregar__acciones--botones">
+      <a href="#" class="boton">Cancelar</a>
+    </div>
+  </div>
+</section>
